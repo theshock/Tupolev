@@ -1,1 +1,10 @@
-Sorry, README is empty at present moment
+Philosophy
+==========
+- All framework consists from only one file
+- Methods which change classes inner state must return $this for jQuery-like chaning
+- Framework must include all fundamental development tools, such as caching, templates, databases, forms, etc.
+- OOP-implementation and architecture hides behind functional facade
+- Stability is better than new features.
+- All classes, methods and functions must be sufficiently documented, since API documentation generates from sourcecode.
+- Convention is over configuration
+- PHP 5.3 only
