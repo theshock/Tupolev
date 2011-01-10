@@ -373,4 +373,11 @@ namespace tu\utils
 		}
 		return $v;
 	}
+
+	function lambda ($value)
+	{
+		return function () use ($value) {
+			return $value;
+		}
+	}
 }

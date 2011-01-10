@@ -2,23 +2,15 @@
 require_once 'core.php';
 
 // Simple controllers
-tu\controller('/',
-	function () {
-		return '<a href="./examples.php?url=another">Another page</a>';
-	});
+tu\controller('/', tu\utils\lambda('<a href="./examples.php?url=another">Another page</a>'));
 
-tu\controller('/?another',
-	function () {
-		return 'Try <a href="./examples.php?url=json">encoded json.';
-	});
+tu\controller('/?another', tu\utils\lambda('Try <a href="./examples.php?url=json">encoded json.</a>'));
 
 // Controller decorated with strtolower(json_encode(<closure>))
 tu\controller('/?json',
 	tu\decorator('strtolower',
 		tu\decorator('json_encode',
-			function () {
-				return array('Say', 'Hello', 'World', 'To', 'Json');
-			})));
+			tu\utils\lambda(array('Say', 'Hello', 'World', 'To', 'Json')))));
 
 // Route '/?json' decorated with strtoupper
 tu\controller('/?json_ucase',
